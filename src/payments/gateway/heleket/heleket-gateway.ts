@@ -1,9 +1,16 @@
 import { Injectable } from '@nestjs/common';
-import { PaymentGateway } from './payment-gateway.interface';
+import { PaymentGateway } from '../payment-gateway.interface';
+import { HeleketResponse } from './types/heleket.shared.types';
+import {
+  HeleketCreatePaymentRequest,
+  HeleketCreatePaymentResponse,
+} from './types/heleket.create.types';
 
 @Injectable()
 export class HeleketGateway implements PaymentGateway {
-  createPayment(data: any): Promise<any> {
+  createPayment(
+    data: HeleketCreatePaymentRequest,
+  ): Promise<HeleketResponse<HeleketCreatePaymentResponse>> {
     throw new Error('Method not implemented.');
   }
 

@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { HeleketGateway } from './heleket-gateway';
+import { HeleketGateway } from './heleket/heleket-gateway';
 import { YookassaGateway } from './yookassa-gateway';
 import { PaymentProvider } from 'src/common/enums/payment-provider.enum';
 import { PaymentGateway } from './payment-gateway.interface';

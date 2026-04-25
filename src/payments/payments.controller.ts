@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Param, Post } from '@nestjs/common';
 import { PaymentsService } from './payments.service';
 import { PaymentProvider } from 'src/common/enums/payment-provider.enum';
 
@@ -7,6 +7,7 @@ export class PaymentsController {
   constructor(private readonly service: PaymentsService) {}
 
   @Post()
+  @HttpCode(201)
   async create(
     @Body() dto: any,
     @Param('provider') provider: PaymentProvider,
